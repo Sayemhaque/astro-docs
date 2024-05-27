@@ -8,24 +8,26 @@ type Props = {
 const { colors } = Astro.props;
 ---
 
-{
-  colors.map((color) => (
-    <div class="mt-12">
-      <h4 class="text-lg font-semibold">{color.name}</h4>
-      <div class="grid grid-cols-10">
-        {color.shades.map((shade) => (
-          <div
-            class="h-12 transition-all"
-            style={{ background: shade.value }}
-          />
-        ))}
-        {color.shades.map((shade) => (
-          <div class="text-sm flex flex-col text-center font-mono text-slate-500">
-            <span>{shade.shade}</span>
-            <span class="uppercase text-xs">{shade.value}</span>
-          </div>
-        ))}
+<div>
+  {
+    colors?.map((color) => (
+      <div class="mt-12">
+        <h4 class="text-lg font-semibold">{color.name}</h4>
+        <div class="grid grid-cols-10">
+          {color.shades.map((shade) => (
+            <div
+              class="h-12 transition-all"
+              style={{ background: shade.value }}
+            />
+          ))}
+          {color.shades.map((shade) => (
+            <div class="text-sm flex flex-col text-center font-mono text-slate-500">
+              <span>{shade.shade}</span>
+              <span class="uppercase text-xs">{shade.value}</span>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  ))
-}
+    ))
+  }
+</div>
