@@ -1,0 +1,22 @@
+---
+import DocsLayout from '../../layouts/docs-layout.astro';
+import ColorsShades from './components/colors-shades.astro';
+import {
+  blueColors,
+  grayColors,
+  greenColors,
+  redColors,
+} from './components/colors';
+---
+
+<DocsLayout title="typeography page">
+  <div>
+    <h1 class="text-3xl mt-5">Colors</h1>
+    <div class="flex flex-col space-y-12">
+      <ColorsShades colors={grayColors} />
+      <ColorsShades colors={blueColors} />
+      <ColorsShades colors={greenColors} />
+      <ColorsShades colors={redColors} />
+    </div>
+  </div>
+</DocsLayout>

@@ -1,0 +1,43 @@
+---
+const sidebarLinks = [
+  {
+    title: 'Core',
+    link: [
+      { title: 'Introduction', path: '/core/introduction' },
+      { title: 'Colors', path: '/core/colors' },
+      { title: 'Typepography', path: '/core/typeography' },
+      { title: 'Shadows', path: '/core/shadows' },
+    ],
+  },
+  {
+    title: 'Components',
+    link: [
+      { title: 'Buttons', path: '/core/buttons' },
+      { title: 'Status pills', path: '/core/status-pills' },
+      { title: 'Input', path: '/core/input' },
+      { title: 'Table', path: '/core/table' },
+    ],
+  },
+  {
+    title: 'Patterns',
+    link: [{ title: 'Introduction', path: '/core/introduction' }],
+  },
+];
+---
+
+<div class="border-r border-gray-200 w-64">
+  {
+    sidebarLinks.map((links) => (
+      <ul>
+        <li class="text-xl mt-4 font-semibold">{links.title}</li>
+        <ul class="border-gray-200 border-l">
+          {links.link.map((subLink) => (
+            <li class="px-6 py-4 text-md">
+              <a href={subLink.path}>{subLink.title}</a>
+            </li>
+          ))}
+        </ul>
+      </ul>
+    ))
+  }
+</div>
